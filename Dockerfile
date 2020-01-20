@@ -16,6 +16,9 @@ RUN npm build
 # Setup base image for next phase
 FROM nginx:latest
 
+# Expose port 80
+EXPOSE 80
+
 # Copy from previous phase
 COPY --from=builder /app/build /usr/share/nginx/html
 
