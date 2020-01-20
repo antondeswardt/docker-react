@@ -5,9 +5,9 @@ FROM node:alpine AS builder
 WORKDIR '/app'
 
 # Setup Dependencies for builder phase
-COPY package.json .
+COPY package.json ./
 RUN npm install
-COPY . .
+COPY . ./
 RUN npm build
 
 # After the above steps, /app/build
